@@ -35,6 +35,10 @@ $t2h = HTML::FromText->new({urls => 1});
 $html = $t2h->parse( 'http://example.com/?foo=bar&baz=quux' );
 cmp_ok( $html, 'eq', '<a href="http://example.com/?foo=bar&amp;baz=quux" class="hft-urls">http://example.com/?foo=bar&amp;baz=quux</a>', 'urls and metachars did' );
 
+$t2h = HTML::FromText->new({urls => 1, href_attribs => 'rel="nofollow"'});
+$html = $t2h->parse( 'http://example.com/?foo=bar&baz=quux' );
+cmp_ok( $html, 'eq', '<a href="http://example.com/?foo=bar&amp;baz=quux" class="hft-urls" rel="nofollow">http://example.com/?foo=bar&amp;baz=quux</a>', 'additional href attrib' );
+
 
 $t2h = HTML::FromText->new({email => 1});
 $html = $t2h->parse( 'casey@geeknest.com' );

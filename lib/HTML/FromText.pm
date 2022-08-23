@@ -234,6 +234,8 @@ sub new {
                    blockcode    => 0,
                    tables       => 0,
 
+                   href_attribs => '',
+
                    %{ $options },
                   );
 
@@ -577,8 +579,11 @@ Return value is ignored.
 
 sub urls {
     my ($self) = @_;
+
+    my $attribs = $self->{options}{href_attribs} ? ' '.$self->{options}{href_attribs} : '';
+
     $self->{html} =~ s{\b((?:$PROTOCOLS):[-\w.~:/?#\[\]\@!\$&'()*+,;=]+)}
-                      {<a href="$1" class="hft-urls">$1</a>}og;
+                      {<a href="$1" class="hft-urls"$attribs>$1</a>}og;
 }
 
 =head3 email
