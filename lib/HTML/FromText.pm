@@ -76,6 +76,14 @@ This option is off by default.
 
 Replaces URLs with links.
 
+Pass additonal attribs that should be set on the C<<<a href>>> element
+as a string in option C<href_attribs>. For example:
+
+  HTML::FromText->new({
+      urls         => 1,
+      href_attribs => 'rel="nofollow"'
+  });
+
 =item email
 
 This option is off by default.
