@@ -1,6 +1,9 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+    - very simple way to pass additional attribs to href, to implement
+      rel="nofollow" (Thomas Klausner)
+
 
 2.07      2013-07-14 08:33:32 America/New_York
           - typo fix in documentation; thanks to Francesco Cecconi and Debian

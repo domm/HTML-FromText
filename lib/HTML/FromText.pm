@@ -831,4 +831,13 @@ CSS class you'll need to do so like this.
 
 L<text2html(1)>.
 
+=head1 THANKS
+
+=over
+
+=item * Thanks to L<Ctrl O|http://www.ctrlo.com/> for funding the
+development of the "additional attribs to href" feature .
+
+=back
+
 =cut
